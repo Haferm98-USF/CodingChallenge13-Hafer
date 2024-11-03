@@ -30,3 +30,10 @@ const productList = document.getElementById('productList');
             });
         }
         )
+  
+// Task 4: Handle Errors Gracefully
+
+.catch(error => 
+    {
+        console.error('Error: Failed to load Products. Please refresh page or try again later.');
+    });
