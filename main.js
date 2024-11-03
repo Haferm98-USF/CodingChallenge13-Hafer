@@ -11,3 +11,22 @@ const productList = document.getElementById('productList');
             return response.json();
         }
         )
+
+// Task 3: Display Product Details Dynamically
+
+        .then(products => 
+        {
+            products.forEach(product => 
+            {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = '
+                <img src = "${product.fields.image[0].url}" alt="{product.fields.name}">
+                <p>Name: ${product.fields.name}</p>;
+                <p>Company: ${product.fields.comapny}</p>;
+                <p>Price: ${product.fields.price}' </p>;
+
+                productList.appendChicld(listItem);
+                console.log(product);
+            });
+        }
+        )
